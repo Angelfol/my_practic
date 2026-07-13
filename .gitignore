@@ -1,0 +1,25 @@
+# Сборка
+build/
+*.o
+*.a
+*.cgi
+*.exe
+
+# Локальная конфигурация с реквизитами БД (в git — только app.conf.example)
+config/app.conf
+
+# Загруженные пользователями файлы (кроме демонстрационных seed_*.png)
+uploads/*
+!uploads/.gitkeep
+!uploads/seed_*.png
+
+# Временные файлы
+*.log
+*.tmp
+*.dll
+
+# Скрипт проверки CGI на хостинге — нужен в репозитории
+!deploy/hello.cgi
+dev_server
+dev_server.exe
+build-cmake/

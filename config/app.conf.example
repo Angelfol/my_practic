@@ -1,0 +1,18 @@
+# Конфигурация информационной системы аптеки.
+# Скопируйте в config/app.conf и укажите реальные реквизиты БД.
+# Файл app.conf не хранится в git и закрыт от веб-доступа через .htaccess.
+
+db_host = localhost
+db_port = 3306
+db_name = apteka
+db_user = apteka
+db_password = CHANGE_ME
+
+# Время жизни сессии, минут
+session_minutes = 120
+
+# Каталог для загружаемых изображений (относительно каталога CGI)
+upload_dir = uploads
+
+# Максимальный размер загружаемого файла, байт (5 МБ)
+max_upload_bytes = 5242880

@@ -1,0 +1,28 @@
+# Шаблон .htaccess для развёртывания на Beget
+# (скопировать в ~/<домен>/public_html/UTP2026/.htaccess)
+
+Options +ExecCGI
+AddHandler cgi-script .cgi
+DirectoryIndex index.cgi
+
+# Конфигурация с реквизитами БД не должна выдаваться веб-сервером
+<FilesMatch "\.(conf|example)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# Исходники и служебные файлы тоже закрываем
+<FilesMatch "\.(cpp|hpp|a|o|sql|md)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</FilesMatch>
